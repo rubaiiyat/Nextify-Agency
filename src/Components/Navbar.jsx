@@ -3,8 +3,8 @@ import { Link } from "react-router";
 
 const Navbar = () => {
   return (
-    <div className="">
-      <div className=" navbar bg-base-100 shadow-sm  ">
+    <div className="bg-base-100 shadow-sm w-full">
+      <div className=" navbar  max-w-screen-xl container mx-auto">
         <div className="navbar-start ">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -109,10 +109,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end space-x-5">
-          <Link
-            to={"/login"}
-            className="bg-gray-800 p-2 px-4 text-primary font-bold rounded transition duration-300 ease-in-out hover:text-indigo-400 hover:bg-gray-900  "
-          >
+          <Link to={"/login"} className="btn btn-outline btn-secondary">
             Login
           </Link>
           <Link to={"/package"} className="btn bg-primary ">

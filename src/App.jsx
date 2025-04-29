@@ -5,13 +5,13 @@ import Navbar from "./Components/Navbar";
 
 function App() {
   return (
-    <>
+    <div className="">
       <Navbar></Navbar>
-      <main className="min-h-screen">
+      <main className="min-h-screen ">
         <Outlet></Outlet>
       </main>
       <Footer></Footer>
-    </>
+    </div>
   );
 }
 
