@@ -7,11 +7,12 @@ createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route element={<App />}></Route>
-        <Route path="/" element={<div>Home</div>}></Route>
-        <Route path="/services" element={<div>Services</div>}></Route>
-        <Route path="/blogs" element={<div>Blogs</div>}></Route>
-        <Route path="/categories" element={<div>Categories</div>}></Route>
+        <Route element={<App />}>
+          <Route path="/" element={<div>Home</div>}></Route>
+          <Route path="/service" element={<div>Service</div>}></Route>
+          <Route path="/blogs" element={<div>Blogs</div>}></Route>
+          <Route path="/categories" element={<div>Categories</div>}></Route>
+        </Route>
       </Routes>
     </BrowserRouter>
   </StrictMode>
