@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "image": "/images/blogs/blog1.png",
+    "category": "Technology",
+    "title": "How AI is Shaping the Future of Web Development",
+    "description": "Discover how artificial intelligence is transforming the way we build and design websites.",
+    "authorImage": "/images/authors/author1.png",
+    "authorName": "John Doe",
+    "authorRole": "Tech Blogger"
+  },
+  {
+    "id": 2,
+    "image": "/images/blogs/blog2.png",
+    "category": "Design",
+    "title": "10 Tips for Creating Stunning UI/UX Designs",
+    "description": "Learn the secrets to designing user interfaces that captivate and convert users.",
+    "authorImage": "/images/authors/author2.png",
+    "authorName": "Jane Smith",
+    "authorRole": "UX Designer"
+  },
+  {
+    "id": 3,
+    "image": "/images/blogs/blog3.png",
+    "category": "Development",
+    "title": "Understanding JavaScript Closures in Depth",
+    "description": "A comprehensive guide to one of the most powerful concepts in JavaScript.",
+    "authorImage": "/images/authors/author3.png",
+    "authorName": "Mark Johnson",
+    "authorRole": "Frontend Developer"
+  },
+  {
+    "id": 4,
+    "image": "/images/blogs/blog4.png",
+    "category": "Business",
+    "title": "Why Digital Transformation is Essential for Success",
+    "description": "Explore how businesses can thrive by adopting digital transformation strategies.",
+    "authorImage": "/images/authors/author4.png",
+    "authorName": "Emily Carter",
+    "authorRole": "Business Analyst"
+  }
+]
