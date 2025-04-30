@@ -15,7 +15,7 @@ const Testimonials = () => {
         <div className="carousel w-full text-center">
           <div id="slide1" className="carousel-item relative w-full ">
             <div className="flex flex-col md:flex-row">
-              <div className="bg-gray-800 p-10 ml-0 md:ml-10 rounded-l-lg space-y-2 ">
+              <div className="bg-gray-800 p-10  rounded-l-lg space-y-2 ">
                 <img
                   className="w-18 rounded-full mx-auto border-4 border-primary"
                   src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=1760&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -30,7 +30,7 @@ const Testimonials = () => {
                   what we envisioned—on time and beyond expectations.
                 </p>
               </div>
-              <div className="bg-gray-800 p-10 mr-0 md:mr-10 rounded-r-lg space-y-2">
+              <div className="bg-gray-800 p-10  rounded-r-lg space-y-2">
                 <img
                   className="w-18 rounded-full mx-auto border-4 border-primary"
                   src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=1760&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -58,7 +58,7 @@ const Testimonials = () => {
           </div>
           <div id="slide2" className="carousel-item relative w-full">
             <div className="flex flex-col md:flex-row">
-              <div className="bg-gray-800 p-10 ml-0 md:ml-10 rounded-l-lg space-y-2">
+              <div className="bg-gray-800 p-10  rounded-l-lg space-y-2">
                 <img
                   className="w-18 rounded-full mx-auto border-4 border-primary"
                   src="https://images.unsplash.com/photo-1628157588553-5eeea00af15c?q=80&w=1760&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -73,7 +73,7 @@ const Testimonials = () => {
                   about our goals.
                 </p>
               </div>
-              <div className="bg-gray-800 p-10 mr-0 md:mr-10 rounded-r-lg space-y-2">
+              <div className="bg-gray-800 p-10  rounded-r-lg space-y-2">
                 <img
                   className="w-18 rounded-full mx-auto border-4 border-primary"
                   src="https://images.unsplash.com/photo-1586297135537-94bc9ba060aa?q=80&w=1760&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -100,7 +100,7 @@ const Testimonials = () => {
           </div>
           <div id="slide3" className="carousel-item relative w-full">
             <div className="flex flex-col md:flex-row">
-              <div className="bg-gray-800 p-10 ml-0 md:ml-10 rounded-l-lg space-y-2">
+              <div className="bg-gray-800 p-10  rounded-l-lg space-y-2">
                 <img
                   className="w-18 rounded-full mx-auto border-4 border-primary"
                   src="https://images.unsplash.com/photo-1605032396296-6320b29a439b?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -114,7 +114,7 @@ const Testimonials = () => {
                   come to life in a modern and engaging way
                 </p>
               </div>
-              <div className="bg-gray-800 p-10 mr-0 md:mr-10 rounded-r-lg space-y-2">
+              <div className="bg-gray-800 p-10  rounded-r-lg space-y-2">
                 <img
                   className="w-18 rounded-full mx-auto border-4 border-primary"
                   src="https://images.unsplash.com/photo-1715206101663-07034e40117a?q=80&w=1698&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -141,7 +141,7 @@ const Testimonials = () => {
           </div>
           <div id="slide4" className="carousel-item relative w-full">
             <div className="flex flex-col md:flex-row">
-              <div className="bg-gray-800 p-10 ml-0 md:ml-10 rounded-l-lg space-y-2">
+              <div className="bg-gray-800 p-10  rounded-l-lg space-y-2">
                 <img
                   className="w-18 rounded-full mx-auto border-4 border-primary"
                   src="https://images.unsplash.com/photo-1701615004837-40d8573b6652?q=80&w=1760&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -155,7 +155,7 @@ const Testimonials = () => {
                   The final product exceeded our expectations in every way
                 </p>
               </div>
-              <div className="bg-gray-800 p-10 mr-0 md:mr-10 rounded-r-lg space-y-2">
+              <div className="bg-gray-800 p-10  rounded-r-lg space-y-2">
                 <img
                   className="w-18 rounded-full mx-auto border-4 border-primary"
                   src="https://images.unsplash.com/photo-1640951613773-54706e06851d?q=80&w=1760&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
