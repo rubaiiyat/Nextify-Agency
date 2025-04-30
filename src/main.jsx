@@ -8,6 +8,8 @@ import ErrorPage from "./Components/ErrorPage.jsx";
 import Pricing from "./Pages/Home/Pricing.jsx";
 import Blogs from "./Pages/Blogs/Blogs.jsx";
 import Services from "./Pages/Home/Services.jsx";
+import Login from "./Components/Login.jsx";
+import Register from "./Components/Register.jsx";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
@@ -18,6 +20,8 @@ createRoot(document.getElementById("root")).render(
           <Route path="/blogs" element={<Blogs />}></Route>
           <Route path="/package" element={<Pricing />}></Route>
           <Route path="/categories" element={<div>Categories</div>}></Route>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           <Route path="*" element={<ErrorPage />} />
         </Route>
       </Routes>
