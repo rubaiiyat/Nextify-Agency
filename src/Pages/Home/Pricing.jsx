@@ -47,7 +47,7 @@ const Pricing = () => {
   const [isMonthly, setIsMonthly] = useState(true);
 
   return (
-    <div className="max-w-screen-xl container mx-auto px-4">
+    <div className="max-w-screen-xl container mx-auto px-4 mb-20">
       <div className="text-center mt-10 mb-10">
         <p className="text-primary mb-5">Pricing</p>
         <h1 className="text-2xl font-bold md:text-4xl mb-5">
