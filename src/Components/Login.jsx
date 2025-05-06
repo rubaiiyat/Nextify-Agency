@@ -1,67 +1,76 @@
 import React from "react";
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { Link } from "react-router"; // only if using react-router
+import { useForm } from "react-hook-form";
 
 const Login = () => {
-  const handleGoogleLogin = () => {
-    // handle Google login logic here
-    alert("Google login clicked");
-  };
-
-  const handleGithubLogin = () => {
-    // handle GitHub login logic here
-    alert("GitHub login clicked");
-  };
-
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => console.log(data);
   return (
-    <div className=" text-white flex items-center justify-center px-4">
-      <div className="w-full max-w-md bg-gray-800 mt-10 p-8 rounded-xl shadow-xl">
+    <div className="min-h-screen  flex items-center justify-center px-4 mb-10">
+      <div className="w-full max-w-md bg-gray-800 mt-5 p-8 rounded-xl shadow-xl">
         <h2 className="text-3xl font-bold mb-6 text-center">Login</h2>
 
-        {/* Email */}
-        <div className="mb-4">
-          <label className="block text-sm mb-1">Email</label>
-          <input
-            type="email"
-            placeholder="Enter your email"
-            className="input input-bordered w-full bg-gray-800 text-white"
-          />
-        </div>
+        <form onSubmit={handleSubmit(onSubmit)} action="">
+          {/* Email */}
+          <div className="mb-4">
+            <label className="block text-sm mb-1">Email</label>
+            <input
+              {...register("email", {
+                required: true,
+                pattern: {
+                  value: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
+                  message: "Invalid Email Address",
+                },
+              })}
+              type="email"
+              placeholder="Enter your email"
+              className="input input-bordered w-full bg-gray-800 text-white"
+            />
+            <div className="mt-2">
+              {errors.email && (
+                <span className="text-error">{errors.email.message}</span>
+              )}
+            </div>
+          </div>
 
-        {/* Password */}
-        <div className="mb-6">
-          <label className="block text-sm mb-1">Password</label>
-          <input
-            type="password"
-            placeholder="Enter your password"
-            className="input input-bordered w-full bg-gray-800 text-white"
-          />
-        </div>
+          {/* Password */}
+          <div className="mb-6">
+            <label className="block text-sm mb-1">Password</label>
+            <input
+              {...register("password", {
+                required: true,
+              })}
+              type="password"
+              placeholder="Create a password"
+              className="input input-bordered w-full bg-gray-800 text-white"
+            />
+          </div>
 
-        {/* Login Button */}
-        <button className="btn btn-primary w-full mb-4">Login</button>
+          {/* Register Button */}
+          <button className="btn btn-primary w-full mb-4">Login</button>
+        </form>
 
         {/* OR divider */}
         <div className="text-center my-4 text-gray-400">OR</div>
 
-        {/* Social Logins */}
+        {/* Social Signups */}
         <div className="flex flex-col gap-3">
-          <button
-            onClick={handleGoogleLogin}
-            className="btn w-full bg-white text-black hover:bg-gray-100"
-          >
-            <FaGoogle className="mr-2" /> Continue with Google
+          <button className="btn w-full bg-white text-black hover:bg-gray-100">
+            <FaGoogle className="mr-2" /> Login with Google
           </button>
 
-          <button
-            onClick={handleGithubLogin}
-            className="btn w-full bg-black text-white hover:bg-gray-800"
-          >
-            <FaGithub className="mr-2" /> Continue with GitHub
+          <button className="btn w-full bg-black text-white hover:bg-gray-800">
+            <FaGithub className="mr-2" /> Login with GitHub
           </button>
         </div>
 
-        {/* Register Redirect */}
+        {/* Login Redirect */}
         <p className="mt-6 text-center text-sm text-gray-400">
           Don't have an account?{" "}
           <Link to="/register" className="text-primary hover:underline">
