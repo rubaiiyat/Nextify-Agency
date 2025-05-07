@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router";
 import { useAuth } from "../Context/AuthProvider";
+import { FaUserAlt } from "react-icons/fa";
 
 const Navbar = () => {
   const { user } = useAuth();
-  console.log(user.displayName);
+
   return (
     <div className="bg-base-100 shadow-sm w-full">
       <div className=" navbar  max-w-screen-xl container mx-auto">
@@ -111,14 +112,42 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <div className="navbar-end space-x-5">
-          <Link to={"/login"} className="btn btn-outline btn-secondary">
-            Login
-          </Link>
-          <Link to={"/package"} className="btn bg-primary ">
-            Start Free Trial
-          </Link>
-        </div>
+        {user ? (
+          <div className="navbar-end space-x-5">
+            <Link to={"/package"} className="btn bg-primary ">
+              Start Free Trial
+            </Link>
+            <div className="dropdown dropdown-hover">
+              <div tabIndex={0} role="button" className=" m-1">
+                <div className="text-xl bg-gray-900 p-3 rounded-full text-secondary hover:cursor-pointer">
+                  <FaUserAlt />
+                </div>
+              </div>
+              <ul
+                tabIndex={0}
+                className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm"
+              >
+                <li>
+                  <Link to={"/dashboard"} className="text-secondary ">
+                    Dashboard
+                  </Link>
+                </li>
+                <li>
+                  <Link className="text-secondary ">Logout</Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+        ) : (
+          <div className="navbar-end space-x-5">
+            <Link to={"/login"} className="btn btn-outline btn-secondary">
+              Login
+            </Link>
+            <Link to={"/package"} className="btn bg-primary ">
+              Start Free Trial
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );
