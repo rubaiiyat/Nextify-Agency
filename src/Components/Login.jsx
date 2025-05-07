@@ -14,10 +14,25 @@ const Login = () => {
   } = useForm();
 
   const navigate = useNavigate();
-  const { signInWithEmail } = useAuth();
+  const { signInWithEmail, handleGoogleLogin } = useAuth();
   const onSubmit = async (data) => {
     try {
       await signInWithEmail(data.email, data.password);
+      Swal.fire({
+        title: "Successfully Login!",
+        icon: "success",
+        draggable: true,
+      });
+      navigate("/");
+    } catch (error) {
+      console.log("Invalid Login", error.message);
+    }
+  };
+
+  const googelLogin = async () => {
+    console.log("working");
+    try {
+      await handleGoogleLogin();
       Swal.fire({
         title: "Successfully Login!",
         icon: "success",
@@ -78,7 +93,10 @@ const Login = () => {
 
         {/* Social Signups */}
         <div className="flex flex-col gap-3">
-          <button className="btn w-full bg-white text-black hover:bg-gray-100">
+          <button
+            onClick={googelLogin}
+            className="btn w-full bg-white text-black hover:bg-gray-100"
+          >
             <FaGoogle className="mr-2" /> Login with Google
           </button>
 

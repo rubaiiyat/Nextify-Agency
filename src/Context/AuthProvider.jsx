@@ -1,8 +1,10 @@
 import {
   createUserWithEmailAndPassword,
   getAuth,
+  GoogleAuthProvider,
   signInWithEmailAndPassword,
-} from "firebase/auth/cordova";
+  signInWithPopup,
+} from "firebase/auth";
 import React, { useState } from "react";
 import { useContext } from "react";
 import { createContext } from "react";
@@ -26,7 +28,12 @@ const AuthProvider = ({ children }) => {
   const signInWithEmail = (email, password) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
-  const value = { user, signUpWithEmail, signInWithEmail };
+
+  const handleGoogleLogin = () => {
+    const googleProvider = new GoogleAuthProvider();
+    return signInWithPopup(auth, googleProvider);
+  };
+  const value = { user, signUpWithEmail, signInWithEmail, handleGoogleLogin };
   return (
     <authContext.Provider value={value}>
       {!loader && children}
