@@ -1,7 +1,9 @@
 import React from "react";
 import { FaGoogle, FaGithub } from "react-icons/fa";
-import { Link } from "react-router"; // only if using react-router
+import { Link, useNavigate } from "react-router"; // only if using react-router
 import { useForm } from "react-hook-form";
+import { useAuth } from "../Context/AuthProvider";
+import Swal from "sweetalert2";
 
 const Login = () => {
   const {
@@ -10,10 +12,25 @@ const Login = () => {
     watch,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+
+  const navigate = useNavigate();
+  const { signInWithEmail } = useAuth();
+  const onSubmit = async (data) => {
+    try {
+      await signInWithEmail(data.email, data.password);
+      Swal.fire({
+        title: "Successfully Login!",
+        icon: "success",
+        draggable: true,
+      });
+      navigate("/");
+    } catch (error) {
+      console.log("Invalid Login", error.message);
+    }
+  };
   return (
     <div className="min-h-screen  flex items-center justify-center px-4 mb-10">
-      <div className="w-full max-w-md bg-gray-800 mt-5 p-8 rounded-xl shadow-xl">
+      <div className="w-full max-w-md bg-gray-800 p-8 rounded-xl shadow-xl">
         <h2 className="text-3xl font-bold mb-6 text-center">Login</h2>
 
         <form onSubmit={handleSubmit(onSubmit)} action="">

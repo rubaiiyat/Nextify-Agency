@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaGoogle, FaGithub } from "react-icons/fa";
-import { Link } from "react-router"; // use react-router-dom instead of react-router
+import { Link, useNavigate } from "react-router"; // use react-router-dom instead of react-router
 import { useForm } from "react-hook-form";
+import { useAuth } from "../Context/AuthProvider";
+import Swal from "sweetalert2";
 
 const Register = () => {
   const {
@@ -10,7 +12,34 @@ const Register = () => {
     watch,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+
+  const navigate = useNavigate();
+  const { signUpWithEmail } = useAuth();
+  const onSubmit = async (data) => {
+    try {
+      await signUpWithEmail(data.email, data.password);
+      Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to register here!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, Register Me!",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire({
+            title: "Registerd!",
+            text: "You are successfully registerd. Now provide your email and password to login",
+            icon: "success",
+          });
+        }
+      });
+      navigate("/login");
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
   return (
     <div className="min-h-screen  flex items-center justify-center px-4 mb-10">
       <div className="w-full max-w-md bg-gray-800 mt-5 p-8 rounded-xl shadow-xl">
