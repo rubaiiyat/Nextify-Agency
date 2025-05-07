@@ -1,6 +1,7 @@
 import {
   createUserWithEmailAndPassword,
   getAuth,
+  GithubAuthProvider,
   GoogleAuthProvider,
   signInWithEmailAndPassword,
   signInWithPopup,
@@ -33,7 +34,18 @@ const AuthProvider = ({ children }) => {
     const googleProvider = new GoogleAuthProvider();
     return signInWithPopup(auth, googleProvider);
   };
-  const value = { user, signUpWithEmail, signInWithEmail, handleGoogleLogin };
+
+  const handleGithubLogin = () => {
+    const githubProvider = new GithubAuthProvider();
+    return signInWithPopup(auth, githubProvider);
+  };
+  const value = {
+    user,
+    signUpWithEmail,
+    signInWithEmail,
+    handleGoogleLogin,
+    handleGithubLogin,
+  };
   return (
     <authContext.Provider value={value}>
       {!loader && children}

@@ -14,7 +14,7 @@ const Login = () => {
   } = useForm();
 
   const navigate = useNavigate();
-  const { signInWithEmail, handleGoogleLogin } = useAuth();
+  const { signInWithEmail, handleGoogleLogin, handleGithubLogin } = useAuth();
   const onSubmit = async (data) => {
     try {
       await signInWithEmail(data.email, data.password);
@@ -33,6 +33,20 @@ const Login = () => {
     console.log("working");
     try {
       await handleGoogleLogin();
+      Swal.fire({
+        title: "Successfully Login!",
+        icon: "success",
+        draggable: true,
+      });
+      navigate("/");
+    } catch (error) {
+      console.log("Invalid Login", error.message);
+    }
+  };
+
+  const githubLogin = async () => {
+    try {
+      await handleGithubLogin();
       Swal.fire({
         title: "Successfully Login!",
         icon: "success",
@@ -100,7 +114,10 @@ const Login = () => {
             <FaGoogle className="mr-2" /> Login with Google
           </button>
 
-          <button className="btn w-full bg-black text-white hover:bg-gray-800">
+          <button
+            onClick={githubLogin}
+            className="btn w-full bg-black text-white hover:bg-gray-800"
+          >
             <FaGithub className="mr-2" /> Login with GitHub
           </button>
         </div>
