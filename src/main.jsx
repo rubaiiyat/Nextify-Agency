@@ -12,6 +12,8 @@ import Services from "./Pages/Home/Services.jsx";
 import Login from "./Components/Login.jsx";
 import Register from "./Components/Register.jsx";
 import AuthProvider from "./Context/AuthProvider.jsx";
+import PrivateRoutes from "./Routes/PrivateRoutes.jsx";
+import Dashboard from "./Pages/Dashboard/Dashboard.jsx";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <AuthProvider>
@@ -26,6 +28,15 @@ createRoot(document.getElementById("root")).render(
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="*" element={<ErrorPage />} />
+
+            <Route
+              path="/dashboard"
+              element={
+                <PrivateRoutes>
+                  <Dashboard></Dashboard>
+                </PrivateRoutes>
+              }
+            />
           </Route>
         </Routes>
       </BrowserRouter>
