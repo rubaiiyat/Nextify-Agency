@@ -4,7 +4,12 @@ import { useAuth } from "../Context/AuthProvider";
 import { FaUserAlt } from "react-icons/fa";
 
 const Navbar = () => {
-  const { user } = useAuth();
+  const { user, logOUT } = useAuth();
+
+  const handleLogOut = () => {
+    logOUT();
+    console.log("Working");
+  };
 
   return (
     <div className="bg-base-100 shadow-sm w-full">
@@ -133,7 +138,9 @@ const Navbar = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link className="text-secondary ">Logout</Link>
+                  <button onClick={handleLogOut} className="text-secondary ">
+                    Logout
+                  </button>
                 </li>
               </ul>
             </div>
